@@ -1,0 +1,137 @@
+---
+import cx from 'classnames'
+import CircleArrowIcon from '../icons/circle-arrow-right.astro'
+---
+
+<style lang="scss">
+  .letters {
+    b {
+      @apply text-white;
+    }
+
+    span {
+      display: inline-block;
+      opacity: 0;
+    }
+
+    span:nth-of-type(1) {
+      animation: enter-bottom 1.5s 1.6s forwards;
+    }
+
+    span:nth-of-type(2) {
+      animation: enter-top 1.5s 1s forwards;
+    }
+
+    span:nth-of-type(3) {
+      animation: enter-bottom 1.5s 1.3s forwards;
+    }
+
+    span:nth-of-type(4) {
+      animation: enter-top 1.5s 1.45s forwards;
+    }
+
+    span:nth-of-type(5) {
+      animation: enter-bottom 1.5s 1.15s forwards;
+    }
+
+    span:nth-of-type(6) {
+      animation: enter-top 1.5s 1.75s forwards;
+    }
+  }
+
+  .arrow {
+    opacity: 0;
+    stroke-dasharray: 73;
+    stroke-dashoffset: 75;
+    transform: translateY(-20px) rotate(90deg);
+    transition-duration: 1s;
+
+    &.-visible {
+      /* animation: draw-arrow 1.5s 2s forwards; */
+      stroke-dashoffset: 0;
+      transform: translateY(0) rotate(90deg);
+      opacity: 1;
+    }
+  }
+
+  @keyframes enter-bottom {
+    from {
+      filter: blur(3px);
+      opacity: 0;
+      transform: translateY(20px) scale(0.85);
+    }
+    
+    to {
+      filter: blur(0);
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes enter-top {
+    from {
+      filter: blur(3px);
+      opacity: 0;
+      transform: translateY(-20px) scale(0.85);
+    }
+    
+    to {
+      filter: blur(0);
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes draw-arrow {
+    from {
+      opacity: 0;
+      stroke-dashoffset: 75;
+      transform: translateY(-20px) rotate(90deg);
+    }
+
+    to {
+      opacity: 1;
+      stroke-dashoffset: 0;
+      transform: translateY(0) rotate(90deg);
+    }
+  }
+</style>
+
+<header
+  class="text-center min-h-screen flex items-center justify-center relative"
+  data-controller="scroll-arrow"
+>
+  <div>
+    <h1 class="sr-only">Greg Kohn</h1>
+    <div
+      class={cx(
+        'letters text-[24px] text-white text-opacity-30 font-logo tracking-[0.47em]',
+        'xs:text-32',
+        'sm:text-[52px]'
+      )}
+      aria-hidden="true"
+    >
+      <span>G</span><span>R</span><span>E</span><b>G</b><b>/</b><b>K</b><span>O</span><span>H</span><span>N</span>
+    </div>
+    
+    <p class="job-title mt-56 py-8 xs:text-21">
+      Senior UI Developer
+      <span class="text-white text-opacity-30">@</span>
+      <a
+        href="https://viget.com/"
+        class={cx(
+          'underline decoration-[color:rgba(255,255,255,0.3)] decoration-2 underline-offset-4',
+          'transition-[text-decoration-color] duration-200 hover:decoration-white'
+        )}
+      >
+        Viget
+      </a>
+    </p>
+  </div>
+  <div class="absolute bottom-32 inset-x-0">
+    <CircleArrowIcon
+      className="arrow w-32 mx-auto delay-1000"
+      data-scroll-arrow-target="arrow"
+    />
+  </div>
+</header>

@@ -1,0 +1,67 @@
+---
+import cx from 'classnames'
+import ArrowIcon from '../icons/arrow-right.astro'
+import CircleArrowIcon from '../icons/circle-arrow-right.astro'
+
+let { heading, url, image, date, datetime, highlights } = Astro.props
+---
+<article>
+  <h3 class="font-serif text-72-fluid text-white ml-10">
+    {heading}
+  </h3>
+
+  <div class="mt-16 smd:space-y-20 sm:flex sm:items-start sm:space-x-40 ">
+    <a
+      href={url}
+      class={cx(
+        'group block max-w-520 flex-shrink-0 relative rounded-xl shadow-lg overflow-hidden',
+        'animate-zoom-in transition duration-700',
+        'sm:w-1/2',
+      )}
+    >
+      <img
+        class="aspect-video w-full transition-transform duration-1000 group-hover:scale-[1.03]"
+        src={`assets/projects/520/${image}`}
+        srcset={`
+          assets/projects/520/${image} 520w,
+          assets/projects/1040/${image} 1040w,
+        `}
+        sizes="(min-width: 1100px) 520px, (min-width: 640px) 50vw, 100vw"
+        alt={`Visit ${heading} site`}
+        width="520"
+        height="293"
+      >
+      <CircleArrowIcon
+        className={cx(
+          'absolute bottom-12 right-12 w-24 z-2',
+          'opacity-0 translate-x-4 duration-1000',
+          '[stroke-dasharray:73] [stroke-dashoffset:75]',
+          'group-hover:opacity-100 group-hover:translate-x-0 group-hover:[stroke-dashoffset:0]'
+        )}
+      />
+      <div
+        class={cx(
+          'absolute bottom-0 left-6 right-6 h-2 rounded-xl bg-white',
+          'opacity-0 scale-x-0 transition duration-700',
+          'group-hover:scale-x-100 group-hover:opacity-70'
+        )}
+      ></div>
+    </a>
+    <div class="pt-16">
+      <time
+        datetime={datetime}
+        class="font-sans font-bold uppercase tracking-wider text-14 animate-fade-in transition-opacity duration-500"
+      >
+        {date}
+      </time>
+      <ul class="text-14 mt-32 space-y-28 lg:space-y-40 stagger-fade-right">
+        {highlights.map((highlight) => (
+          <li class="flex items-center space-x-12 transition duration-500">
+            <ArrowIcon className="w-24 h-24 opacity-20 flex-shrink-0" />
+            <span>{highlight}</span>
+          </li>
+        ))}
+      </ul>
+      </div>
+    </div>
+</article>

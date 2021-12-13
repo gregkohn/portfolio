@@ -9,6 +9,12 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "astro": "^0.21.11"
+    "astro": "^0.21.11",
+    "classnames": "^2.3.1",
+    "tailwindcss": "^3.0.0"
+  },
+  "dependencies": {
+    "@hotwired/stimulus": "^3.0.1",
+    "@viget/tailwindcss-plugins": "^0.0.11"
   }
 }
