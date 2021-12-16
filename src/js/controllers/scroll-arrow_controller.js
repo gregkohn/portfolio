@@ -9,7 +9,6 @@ export default class extends Controller {
 
   connect() {
     this.observer.observe(this.element)
-    console.log(this.arrowTarget)
   }
 
   disconnect() {

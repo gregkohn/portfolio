@@ -127,6 +127,11 @@ module.exports = {
         },
       },
     }),
+    extend: {
+      minHeight: {
+        screen: ['100vh', '-webkit-fill-available'],
+      },
+    },
   },
   plugins: [plugins.animate],
 }
