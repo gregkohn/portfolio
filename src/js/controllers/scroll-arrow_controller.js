@@ -17,7 +17,7 @@ export default class extends Controller {
 
   setupObserver() {
     const options = {
-      threshold: 1,
+      threshold: 0.9,
     }
 
     this.observer = new IntersectionObserver((entries) => {
