@@ -3,20 +3,22 @@ import cx from 'classnames'
 import ArrowIcon from '../icons/arrow-right.astro'
 import CircleArrowIcon from '../icons/circle-arrow-right.astro'
 
-let { heading, url, image, date, datetime, highlights } = Astro.props
+let { heading, url, image, date, datetime, endDate, endDatetime, highlights } =
+  Astro.props
 ---
+
 <article>
   <h3 class="font-serif text-72-fluid text-white ml-10">
     {heading}
   </h3>
 
-  <div class="mt-16 smd:space-y-20 sm:flex sm:items-start sm:space-x-40 ">
+  <div class="mt-16 smd:space-y-20 sm:flex sm:items-start sm:space-x-40">
     <a
       href={url}
       class={cx(
         'group block max-w-520 flex-shrink-0 relative z-1 rounded-xl shadow-lg overflow-hidden',
         'animate-zoom-in transition duration-700',
-        'sm:w-1/2',
+        'sm:w-1/2'
       )}
     >
       <img
@@ -30,7 +32,7 @@ let { heading, url, image, date, datetime, highlights } = Astro.props
         alt={`Visit ${heading} site`}
         width="520"
         height="293"
-      >
+      />
       <CircleArrowIcon
         className={cx(
           'absolute bottom-12 right-12 w-24 z-2',
@@ -45,7 +47,8 @@ let { heading, url, image, date, datetime, highlights } = Astro.props
           'opacity-0 scale-x-0 transition duration-700',
           'group-hover:scale-x-100 group-hover:opacity-70'
         )}
-      ></div>
+      >
+      </div>
     </a>
     <div class="pt-16">
       <time
@@ -54,14 +57,29 @@ let { heading, url, image, date, datetime, highlights } = Astro.props
       >
         {date}
       </time>
+      {
+        endDate ? (
+          <>
+            -
+            <time
+              datetime={endDatetime}
+              class="font-sans font-bold uppercase tracking-wider text-14 animate-fade-in transition-opacity duration-500"
+            >
+              {endDate}
+            </time>
+          </>
+        ) : null
+      }
       <ul class="text-14 mt-32 space-y-28 lg:space-y-40 stagger-fade-right">
-        {highlights.map((highlight) => (
-          <li class="flex items-center space-x-12 transition duration-500">
-            <ArrowIcon className="w-24 h-24 opacity-20 flex-shrink-0" />
-            <span>{highlight}</span>
-          </li>
-        ))}
+        {
+          highlights.map((highlight) => (
+            <li class="flex items-center space-x-12 transition duration-500">
+              <ArrowIcon className="w-24 h-24 opacity-20 flex-shrink-0" />
+              <span>{highlight}</span>
+            </li>
+          ))
+        }
       </ul>
-      </div>
     </div>
+  </div>
 </article>

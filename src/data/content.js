@@ -1,5 +1,19 @@
 export const projects = [
   {
+    heading: 'Acre',
+    url: 'https://acrehomes.com',
+    image: 'acre.jpg',
+    date: 'Feb 2022',
+    datetime: '2022-02',
+    endDate: 'Jan 2023',
+    endDatetime: '2023-01',
+    highlights: [
+      'Senior Frontend Engineer',
+      'React + Next.js, TS, Jest + Cypress',
+      'Contentful, GraphQL, Vercel, Tailwind',
+    ],
+  },
+  {
     heading: 'MW Components',
     url: 'https://mwcomponents.com',
     image: 'mw.jpg',
