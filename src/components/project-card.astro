@@ -2,9 +2,20 @@
 import cx from 'classnames'
 import ArrowIcon from '../icons/arrow-right.astro'
 import CircleArrowIcon from '../icons/circle-arrow-right.astro'
+import CompanyIcon from '../icons/company.astro'
 
-let { heading, url, image, date, datetime, endDate, endDatetime, highlights } =
-  Astro.props
+let {
+  heading,
+  url,
+  image,
+  date,
+  datetime,
+  endDate,
+  endDatetime,
+  toPresent,
+  highlights,
+  company,
+} = Astro.props
 ---
 
 <article>
@@ -51,23 +62,28 @@ let { heading, url, image, date, datetime, endDate, endDatetime, highlights } =
       </div>
     </a>
     <div class="pt-16">
-      <time
-        datetime={datetime}
+      <p
         class="font-sans font-bold uppercase tracking-wider text-14 animate-fade-in transition-opacity duration-500"
       >
-        {date}
-      </time>
+        <time datetime={datetime}>
+          {date}
+        </time>
+        {
+          endDate ? (
+            <>
+              -<time datetime={endDatetime}>{endDate}</time>
+            </>
+          ) : null
+        }
+        {toPresent ? <>- Present</> : null}
+      </p>
       {
-        endDate ? (
-          <>
-            -
-            <time
-              datetime={endDatetime}
-              class="font-sans font-bold uppercase tracking-wider text-14 animate-fade-in transition-opacity duration-500"
-            >
-              {endDate}
-            </time>
-          </>
+        company ? (
+          <p class="flex items-center opacity-50 animate-fade-in delay-75 transition-opacity">
+            <span class="sr-only">Employer:</span>
+            <CompanyIcon className="w-16 h-16 mr-6" />
+            {company}
+          </p>
         ) : null
       }
       <ul class="text-14 mt-32 space-y-28 lg:space-y-40 stagger-fade-right">

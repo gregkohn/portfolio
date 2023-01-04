@@ -1,12 +1,14 @@
 export const projects = [
   {
     heading: 'Acre',
+    company: 'Acre',
     url: 'https://acrehomes.com',
     image: 'acre.jpg',
     date: 'Feb 2022',
     datetime: '2022-02',
-    endDate: 'Jan 2023',
-    endDatetime: '2023-01',
+    // endDate: 'Jan 2023',
+    // endDatetime: '2023-01',
+    toPresent: true,
     highlights: [
       'Senior Frontend Engineer',
       'React + Next.js, TS, Jest + Cypress',
@@ -15,6 +17,7 @@ export const projects = [
   },
   {
     heading: 'MW Components',
+    company: 'Viget Labs',
     url: 'https://mwcomponents.com',
     image: 'mw.jpg',
     date: 'Nov 2021',
@@ -27,6 +30,7 @@ export const projects = [
   },
   {
     heading: 'Players Trust',
+    company: 'Viget Labs',
     url: 'https://playerstrust.com',
     image: 'players-trust.jpg',
     date: 'Jan 2021',
@@ -39,6 +43,7 @@ export const projects = [
   },
   {
     heading: 'NFLPA',
+    company: 'Viget Labs',
     url: 'https://nflpa.com',
     image: 'nflpa.jpg',
     date: 'Apr 2020',
@@ -47,6 +52,7 @@ export const projects = [
   },
   {
     heading: 'Stern Pinball Insider',
+    company: 'Viget Labs',
     url: 'https://code.viget.com/spb-insider/',
     image: 'stern.jpg',
     date: 'Mar 2020',
@@ -59,6 +65,7 @@ export const projects = [
   },
   {
     heading: 'Healthy Goodness',
+    company: 'Freelance',
     url: 'https://healthygoodness.com/',
     image: 'healthy-goodness.jpg',
     date: 'Sep 2019',
@@ -71,6 +78,7 @@ export const projects = [
   },
   {
     heading: 'BRT Innovation',
+    company: 'Viget Labs',
     url: 'https://innovation.businessroundtable.org/',
     image: 'brt.jpg',
     date: 'Mar 2019',
@@ -83,6 +91,7 @@ export const projects = [
   },
   {
     heading: 'Hamilton Company',
+    company: 'Viget Labs',
     url: 'https://www.hamiltoncompany.com/',
     image: 'hamilton.jpg',
     date: 'Oct 2018',
@@ -91,6 +100,7 @@ export const projects = [
   },
   {
     heading: 'Ace Your Retirement',
+    company: 'Viget Labs',
     url: 'https://aceyourretirement.org/',
     image: 'ayr.jpg',
     date: 'Jul 2017',
@@ -103,6 +113,7 @@ export const projects = [
   },
   {
     heading: 'ESPN: LeBron',
+    company: 'Viget Labs',
     url: 'https://www.espn.com/espn/feature/story/_/id/17952070/follow-lebron-journey-top-10-nba-scoring-list',
     image: 'lebron.jpg',
     date: 'Nov 2016',

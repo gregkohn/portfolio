@@ -5,20 +5,19 @@ import ProjectCard from '../components/project-card.astro'
 
 <section>
   <h2 class="sr-only">Work</h2>
-  <!-- <h2 class="font-serif text-48 text-white text-opacity-30">
-    Work
-  </h2> -->
   <div class="mt-36 space-y-[25vh]">
     {
       projects.map((project) => (
         <ProjectCard
           heading={project.heading}
+          company={project.company}
           image={project.image}
           url={project.url}
           date={project.date}
           datetime={project.datetime}
           endDate={project.endDate}
           endDatetime={project.endDatetime}
+          toPresent={project.toPresent}
           highlights={project.highlights}
         />
       ))
