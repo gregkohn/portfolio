@@ -12,7 +12,7 @@ export const projects = [
     highlights: [
       'Senior Frontend Engineer',
       'React + Next.js, TS, Jest + Cypress',
-      'Contentful, GraphQL, Vercel, Tailwind',
+      'Contentful, GraphQL, Tailwind, Radix UI, XState',
     ],
   },
   {
